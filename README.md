@@ -1,11 +1,11 @@
 # ADK Made Simple - Agent Examples
 
 This project demonstrates simple agents built using the Google Agent Development Kit (ADK).
-Currently, it contains one agent: "Game Dev News Scout".
+Currently, it contains one agent: "Reddit Scout".
 
 ## Agents
 
-- **Game Dev News Scout**: Simulates fetching recent discussion titles from game development subreddits.
+- **Reddit Scout**: Simulates fetching recent discussion titles from game development subreddits.
 
 ## General Setup
 
@@ -34,19 +34,19 @@ Currently, it contains one agent: "Game Dev News Scout".
 
 4.  **Agent-Specific Setup:** Navigate to the specific agent's directory within `agents/` and follow the instructions in its `README.md` (or follow the steps below for the default agent).
 
-## Game Dev News Scout - Setup & Running
+## Reddit Scout - Setup & Running
 
 1.  **Navigate to Agent Directory:**
 
     ```bash
-    cd agents/news_scout
+    cd agents/reddit_scout
     ```
 
 2.  **Set up API Key:**
 
     - Copy the example environment file:
       ```bash
-      cp .env.example .env
+      cp ../.env.example .env
       ```
     - Edit the `.env` file and add your Google AI API Key. You can obtain one from [Google AI Studio](https://aistudio.google.com/app/apikey).
       ```dotenv
@@ -57,13 +57,13 @@ Currently, it contains one agent: "Game Dev News Scout".
 3.  **Run the Agent:**
 
     - Make sure your virtual environment (from the root directory) is activated.
-    - From the `agents/news_scout` directory, run the agent using the ADK CLI, specifying the core code package:
+    - From the `agents/reddit_scout` directory, run the agent using the ADK CLI, specifying the core code package:
       ```bash
-      adk run news_scout
+      adk run reddit_scout
       ```
     - Alternatively, from the project root (`adk-made-simple`), you might be able to run:
       ```bash
-      adk run agents.news_scout
+      adk run agents.reddit_scout
       ```
       _(Check ADK documentation for preferred discovery method)_
 
@@ -76,15 +76,11 @@ Currently, it contains one agent: "Game Dev News Scout".
 ```
 adk-made-simple/
 ├── agents/
-│   └── news_scout/          # Game Dev News Scout Agent
-│       ├── news_scout/      # Core Python package
-│       │   ├── __init__.py
-│       │   └── agent.py
-│       ├── .env.example     # Agent-specific env example
-│       ├── .gitignore       # Optional: Agent-specific ignores
-│       └── README.md        # Optional: Agent-specific README
+│   └── reddit_scout/        # Reddit Scout Agent
+│       ├── __init__.py
+│       └── agent.py
 ├── .venv/                   # Virtual environment directory
-├── .env                     # Optional: Root env vars (or use agent-specific)
+├── .env.example             # Environment variables example
 ├── .gitignore               # Root gitignore file
 ├── requirements.txt         # Project dependencies
 ├── README.md                # This file (Overall Project README)
